@@ -1,48 +1,41 @@
 #include <iostream>
-
-using namespace std;
-class Punkt
-{
-float x,y;
-string nazwa;
+#include <string>
+class Animal{
 public:
-    void wyswietl()
-    {
-    cout<<nazwa<<"("<<x<<"."<<y<<"0"<<endl;
+
+    Animal(){
+    std::cout<<"created animal"<<std::endl;
+    name="animal";
+    legsCount=4;
+    std::cout<<"created animal"<<std::endl;}
+    void print(){
+std::cout<<"i am"<<name<<std::endl;
     }
-    Punkt(string n="s", float a=0, float b=0)
-    {
-        nazwa=n;
-        x=a;
-        y=b;
-    }
+protected:
+    std::string name;
+    int legsCount;
 };
-class Kolo:public Punkt
-{
-    float r;
-    string nazwa;
+class Dog :public Animal{
 public:
-    void wyswietl()
-    {
-        cout<<"kolo o nazwie"<<nazwa<<endl;
-        cout<<"srodek kola"<<endl;
-        Punkt::wyswietl();
-        cout<<"Promien"<<r<<endl;
-        cout<<"pole kola "<<3.14*r<<endl;
-    }
-    Kolo(string nk="kolko", string np="s",float a=0, float b=0, float pr=1)
-    :Punkt(np,a,b)
-    {
-     nazwa=nk;
-     r=pr;
+    Dog(std::string name){
+        this->name=name;
+        this->owner=owner;
 
+        std::cout<<"created dog"<<std::endl;
     }
+    void printdoggo(){
+    print();
+    std::cout<<'my owner is '<<owner<<std::endl;
+    }
+private:
+    std::string owner;
+
 };
 
 int main()
 {
-    Kolo k1;
-    k1.wyswietl(nk="kolko";np="s";a=0; b=0; pr=1;);
-    cout << "Hello world!" << endl;
+    Dog doggo("doggo");
+    doggo.print();
+
     return 0;
 }
